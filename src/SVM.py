@@ -31,20 +31,3 @@ plt.xlabel('Diametro')
 plt.title('SVM')
 plt.ylabel('Peso')
 plt.show()
-
-X_train, X_test, y_train, y_test = train_test_split(
-    setdatos[setdatos.columns[:]].values, setdatos[setdatos.columns[0]].values, test_size=0.7, random_state=123)
-model = svm.SVC(kernel='RBF', C=1)
-model.fit(X_train, y_train)
-param_grid = {'C': [0.1, 1, 10, 100, 1000],
-              'GAMMA': [1, 0.1, 0.01, 0.001, 0.0001],
-              'KERNEL': ['RBF']}
-predictions = model.predict(X_test)
-print(classification_report(y_test, predictions))
-
-grid = GridSearchCV(svm.SVC(), param_grid, refit=True, cv=3, verbose=3)
-grid.fit(X_train, y_train)
-print(grid.best_params_)
-print(grid.best_estimator_)
-grid_predictions = grid.predict(X_test)
-print(classification_report(y_test, grid_predictions))
