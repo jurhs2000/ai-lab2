@@ -1,14 +1,13 @@
-from sklearn import datasets
+import sklearn as skl
 import pandas as pd
 
 # Lo mejor seria que este metodo devuelva de una vez los datos de entrenamiento y de prueba separados
-def load_data_PR_KNN():
+def load_regresion_data():
   df = pd.read_csv('../data/Oranges vs Grapefruit.csv')
-  iris = datasets.load_iris()
-  X = iris.data[:, :2]
-  Y = iris.target
-  return df
+  train, test = skl.train_test_split(df, test_size=0.7)
+  return df, train, test
 
-def load_data_SVM():
+def load_KNNSVM_data():
   df = pd.read_csv('../data/Walmart.csv')
-  return df
+  train, test = skl.train_test_split(df, test_size=0.7)
+  return df, train, test
