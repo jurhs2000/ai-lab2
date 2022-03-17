@@ -1,5 +1,7 @@
 from LoadData import load_data_KNN
 from KNN import KNN
+from PR import execute_PR
+from SVM import execute_SVM
 
 option = 0
 while option != 1 and option != 2 and option != 3:
@@ -11,6 +13,7 @@ while option != 1 and option != 2 and option != 3:
     option = int(input('Opcion: '))
     if option == 1:
         print('\nRegresion Polinomial')
+        execute_PR()
     elif option == 2:
         print('\nK Nearest Neighbors')
         knn_train, knn_test = load_data_KNN()
@@ -22,6 +25,7 @@ while option != 1 and option != 2 and option != 3:
         knn.graph_hsv_rgb(predictions)
     elif option == 3:
         print('\nSupport Vector Machine')
+        execute_SVM()
     elif option == 4:
         print('')
     else:
