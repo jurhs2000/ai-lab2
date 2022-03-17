@@ -24,6 +24,7 @@ class KNN:
       sum += (row1[i] - row2[i])**2
     return sum**0.5
 
+  # return the k nearest neighbors of a row
   def get_k_nearest_neighbors(self, row):
     distances = []
     count = 0
@@ -47,7 +48,7 @@ class KNN:
       test_df.loc[row.Index, 'name'] = neighbors['name'].value_counts().idxmax()
     return test_df
 
-  # accuracy of the prediction, receive prediction, compare with self.y_test
+  # accuracy of the prediction
   def accuracy(self, prediction):
     count = 0
     for i in range(len(prediction)):
