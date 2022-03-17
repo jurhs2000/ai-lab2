@@ -92,7 +92,6 @@ class KNN:
     data['V'] = data.apply(lambda row: self.rgb_to_hsv(row['red'], row['green'], row['blue'])[2], axis=1)
     sns.scatterplot(data['H'], data['V'], hue=data['name'], palette=['blue', 'orange'])
     plt.show()
-    plt.show()
 
   # Convert RGB to HSV
   def rgb_to_hsv(self, r, g, b):
