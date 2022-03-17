@@ -4,6 +4,8 @@
 ## Juan Pablo Pineda 19087
 ## Diego Crespo 19541
 
+[Video solución](https://youtu.be/KhkRzkgOq5w)
+
 Artificial intelligence models of 
  - Polynomial Regression
  - K-Nearest Neighbors
