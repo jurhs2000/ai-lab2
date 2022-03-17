@@ -24,8 +24,8 @@ def execute_SVM():
 
     plt.subplot(1, 1, 1)
     Z = svmm.predict(numpy.c_[xx.ravel(), yy.ravel()])
-    plt.contourf(xx, yy, Z.reshape(xx.shape), cmap=plt.cm.Accent, alpha=0.7,)
     Z = Z.reshape(xx.shape)
+    plt.contourf(xx, yy, Z.reshape(xx.shape), cmap=plt.cm.Accent, alpha=0.8,)
     plt.xlim(xx.min(), xx.max())
     plt.scatter(x[:, 0], x[:, 1], c=y, cmap=plt.cm.Accent)
     plt.xlabel('Diametro')
